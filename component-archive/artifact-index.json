@@ -1,0 +1,1 @@
+{"schemaVersion":1,"artifacts":[{"repository":"component-descriptors/github.com/acme/db-app","tag":"v1.1.2","digest":"sha256:f44df9e66b27d37c2d43bb325fd49dbb29f55ffc150918f57cec9f8f18d39b37"},{"repository":"component-descriptors/github.com/acme/django-app","tag":"v1.0.0","digest":"sha256:1c0214b330d3bed359693833356d138e385e1c6edc51cfb2d9babeaf7c4bb88e"}]}

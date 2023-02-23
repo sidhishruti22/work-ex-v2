@@ -1,0 +1,47 @@
+components:
+- name: github.com/acme/db-app
+  version: "v1.1.2"
+  provider:
+    name: acme.org
+  resources:
+    - name: db-deployment
+      type: Directory
+      input:
+        type: dir
+        path: "manifests"
+        compress: true
+    - name: db-config
+      type: PlainText
+      input:
+        type: file
+        path: "config.yaml"
+        compress: true
+    - name: db-image
+      type: ociImage
+      version: "v1.0.0"
+      access:
+        type: ociArtifact
+        imageReference: ammar31/database-app
+- name: github.com/acme/django-app
+  version: "v1.0.0"
+  provider:
+    name: acme.org
+  resources:
+    - name: app-deployment
+      type: Directory
+      input:
+        type: dir
+        path: "manifests"
+        compress: true
+    - name: app-config
+      type: PlainText
+      input:
+        type: file
+        path: "app-config.yaml"
+        compress: true
+    - name: app-image
+      type: ociImage
+      version: "v1.0.0"
+      access:
+        type: ociArtifact
+        imageReference: ammar31/python-django-2.3
