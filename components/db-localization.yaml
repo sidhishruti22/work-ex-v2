@@ -1,0 +1,22 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: Localization
+metadata:
+  name: db-app
+  namespace: ocm-system
+spec:
+  interval: 1m0s
+  componentVersionRef:
+    name: db-app
+    namespace: ocm-system
+  source:
+    sourceRef:
+      kind: Snapshot
+      name: db-snapshot-deployment
+      namespace: ocm-system
+  configRef:
+    resource:
+      resourceRef:
+        name: db-config
+  snapshotTemplate:
+    name: db-deployment-localized
+    createFluxSource: true
