@@ -1,0 +1,15 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: Resource
+metadata:
+  name: db-deployment
+  namespace: ocm-system
+spec:
+  interval: 10m0s
+  componentVersionRef:
+    name: db-app
+    namespace: ocm-system
+  resource:
+    name: db-deployment
+  snapshotTemplate:
+    name: db-snapshot-deployment
+

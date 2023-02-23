@@ -1,0 +1,14 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: Resource
+metadata:
+  name: django-app-deployment
+  namespace: ocm-system
+spec:
+  interval: 10m0s
+  componentVersionRef:
+    name: django-app
+    namespace: ocm-system
+  resource:
+    name: app-deployment
+  snapshotTemplate:
+    name: django-app-snapshot-deployment
